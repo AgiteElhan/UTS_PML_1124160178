@@ -14,8 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Profile Agit Elhandinnata',
-      color: Colors.white,
-      darkTheme: ThemeData.dark(),
+      
       home: ProfilPage(),
     );
   }
@@ -80,9 +79,63 @@ class ProfilPage extends StatelessWidget {
                 ),
               ],
             ),
-          )
+          ),
+          Padding(
+            padding: EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Kontak',
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold
+                  ),
+                ),
+                Divider(),
+                InfoRow(ikon: Icons.email, label: 'Email', value: email),
+                InfoRow(ikon: Icons.phone, label: 'Nomor Handphone', value: noHp),
+                InfoRow(ikon: Icons.school, label: 'Kelas', value: kelas),
+                InfoRow(ikon: Icons.link, label: 'GitHub', value: github),
+                Text(
+                  'Hobi',
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold
+                  ),
+                ),
+                Divider(),
+                InfoRow(ikon: Icons.run_circle, label: 'Hobi', value: 'Lari pagi'),
+                InfoRow(ikon: Icons.gamepad, label: 'Hobi', value: 'Bermain Game'),
+                InfoRow(ikon: Icons.sports_volleyball, label: 'Hobi', value: 'Bermain Volly'),
+
+              ],
+            ),
+          ),
         ],
       ),
+    );
+  }
+}
+
+class InfoRow extends StatelessWidget {
+  const InfoRow({
+    super.key,
+    required this.ikon,
+    required this.label,
+    required this.value,
+    });
+
+    final IconData ikon;
+    final String label;
+    final String value;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      leading: Icon(ikon),
+      title: Text(label),
+      subtitle: Text(value),
     );
   }
 }
