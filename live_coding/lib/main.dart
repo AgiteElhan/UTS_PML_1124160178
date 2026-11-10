@@ -113,6 +113,22 @@ class ProfilPage extends StatelessWidget {
             ),
           ),
         ],
+      ),  
+      floatingActionButton: Builder(
+        builder: (context) {
+          return FloatingActionButton(
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text('Terimakasih Sudah melihat Profile saya'),
+                  backgroundColor: Colors.blue,
+                  duration: Duration(seconds: 3),
+                ),
+              );
+            },
+            child: Icon(Icons.info),
+          );
+        },
       ),
     );
   }
