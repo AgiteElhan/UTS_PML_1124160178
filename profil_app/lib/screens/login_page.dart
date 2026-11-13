@@ -29,7 +29,7 @@ class _LoginPageState extends State<LoginPage> {
 
       
       if (emailController.text == 'agit@gmail.com' &&
-          passwordController.text == '12345') {
+          passwordController.text == '123456') {
 
         setState(() {
           isLoading = false;
@@ -121,9 +121,59 @@ class _LoginPageState extends State<LoginPage> {
                       return 'Masukkan Email valid!!';
                     }
                     return null;
-                    
                   },
                 ),
+                SizedBox(height: 8,),
+                const Text(
+                  'Password',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black87
+                  ),
+                ),
+                SizedBox(height: 8,),
+                TextFormField(
+                  controller: passwordController,
+
+                  decoration: InputDecoration(
+                    hintText: '*********',
+                    prefixIcon: const Icon(
+                      Icons.lock,
+                      color: Colors.blue,
+                    ),
+
+                    suffixIcon: IconButton(
+                      icon: Icon(
+                        isPasswordHidden 
+                        ?Icons.visibility_off
+                        :Icons.visibility,
+                      ),
+                      onPressed: (){
+                        setState(() {
+                          isPasswordHidden = !isPasswordHidden;
+                        });
+                      },
+                    ),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10)
+                    )
+                  ),
+                  validator: (value){
+                    if (value == null || value.isEmpty){
+                      return 'Password Tidak Boleh Kosong!!';
+                    }
+
+                    if (value.length<5){
+                      return 'Password Minimal 6 karakter';
+                    }
+                    return null;
+                  },
+                ),
+
+                const SizedBox(height: 30,),
+                
+
 
 
               ],
