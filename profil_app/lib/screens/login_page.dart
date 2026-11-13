@@ -67,7 +67,65 @@ class _LoginPageState extends State<LoginPage> {
                   size: 80,
                   color: Colors.blue,
                 ),
-                const SizedBox(height: 14,)
+                const SizedBox(height: 14,),
+                const Text(
+                  'LOGIN',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 24,
+                    color: Colors.blue,
+                    fontWeight: FontWeight.bold
+                  ),
+                ),
+
+                SizedBox(height: 14,),
+                const Text(
+                  'Aplikasi Profile APP',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: Colors.grey
+                  ),
+                ),
+
+                SizedBox(height: 40,),
+
+                const Text(
+                  'Email',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black87
+                  ),
+                ),
+                SizedBox(height: 8,),
+                TextFormField(
+                  controller: emailController,
+
+                  decoration: InputDecoration(
+                    hintText: 'Masukkan Alamat Emaul',
+                    prefixIcon: const Icon(
+                      Icons.email,
+                      color: Colors.blue,
+                    ),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10)
+                    )
+                  ),
+                  validator: (value){
+                    if (value == null || value.isEmpty){
+                      return 'Email Tidak Boleh Kosong!!';
+                    }
+
+                    if (!value.contains('@') || !value.contains('.')){
+                      return 'Masukkan Email valid!!';
+                    }
+                    return null;
+                    
+                  },
+                ),
+
+
               ],
             ),
           ),
