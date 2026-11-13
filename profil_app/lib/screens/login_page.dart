@@ -50,6 +50,29 @@ class _LoginPageState extends State<LoginPage> {
   }
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Center(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(24),
+
+          child: Form(
+            key: formKey, 
+
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                const Icon(
+                  Icons.account_circle,
+                  size: 80,
+                  color: Colors.blue,
+                ),
+                const SizedBox(height: 14,)
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }
