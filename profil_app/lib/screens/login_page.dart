@@ -194,7 +194,19 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     )
                     ),
-                )
+                ),
+
+                const SizedBox(height: 30,),
+                const Text(
+                  'Aplikasi Mahasiswa Profile App © 2026',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.grey,
+                    fontSize: 12
+                  ),
+                ),
+
+                const SizedBox(height: 15,),
 
 
 
