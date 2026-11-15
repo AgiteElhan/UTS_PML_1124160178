@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:profil_app/widget/card.dart';
 
 class AboutPage extends StatelessWidget {
   const AboutPage({super.key});
@@ -46,7 +47,40 @@ class AboutPage extends StatelessWidget {
                 )
               ],
             ),
+          ),
+          const SizedBox(height: 24,),
+          const Text(
+            'Keahlian',
+            style: TextStyle(
+              fontSize: 23,
+              fontWeight: FontWeight.bold
+            ),
+          ),
+          const Card(
+            child: Column(
+              children: [
+                InfoRow(
+                  ikon: Icons.code, 
+                  label: 'Programming', 
+                  value: 'PHP, JavaScript, Python, HTML, CSS'
+                ),
+                Divider(height: 1,),
+                InfoRow(
+                  ikon: Icons.web, 
+                  label: 'Web Development', 
+                  value: 'Laravel, React JS, Next JS'
+                ),
+                Divider(height: 1,),
+                
+                InfoRow(
+                  ikon: Icons.design_services, 
+                  label: 'UI/UX Design', 
+                  value: 'Membuat Design Antarmuka aplikasi'
+                ),
+              ],
+            ),
           )
+
         ],
       ),
     );
