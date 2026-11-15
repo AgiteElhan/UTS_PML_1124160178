@@ -63,7 +63,6 @@ class _MyAppState extends State<MyApp> {
           changeTheme:changeTheme
         ),
 
-        // '/edit-profile': (context) => const EditProfilePage(),
 
         // '/about': (context) => const AboutPage(),
       },
