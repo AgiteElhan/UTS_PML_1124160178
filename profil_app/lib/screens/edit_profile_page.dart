@@ -27,7 +27,24 @@ class _EditProfilePage extends State<EditProfilePage> {
   late TextEditingController hobi1Controller;
   late TextEditingController hobi2Controller;
   late TextEditingController hobi3Controller;
+
   @override
+  void initState(){
+    super.initState();
+    
+    namaController = TextEditingController(text: widget.profile.nama);
+    nimController = TextEditingController(text: widget.profile.nim);
+    prodiController = TextEditingController(text: widget.profile.prodi);
+    kelasController = TextEditingController(text: widget.profile.kelas);
+    bioController = TextEditingController(text: widget.profile.bio);
+    emailController = TextEditingController(text: widget.profile.email);
+    hpController = TextEditingController(text: widget.profile.hp);
+    githubController = TextEditingController(text: widget.profile.github);
+    keahlianController = TextEditingController(text: widget.profile.keahlian);
+    hobi1Controller = TextEditingController(text: widget.profile.hobi1);
+    hobi2Controller = TextEditingController(text: widget.profile.hobi2);
+    hobi3Controller = TextEditingController(text: widget.profile.hobi3);
+  }
   Widget build(BuildContext context) {
     return const Placeholder();
   }
