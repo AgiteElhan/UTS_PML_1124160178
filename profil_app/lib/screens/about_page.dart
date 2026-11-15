@@ -49,6 +49,33 @@ class AboutPage extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 24,),
+           const Text(
+            'Deskripsi Singkat',
+            style: TextStyle(
+              fontSize: 23,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const Card(
+            child: Padding(
+              padding: EdgeInsets.all(16),
+              child: Text(
+                'Saya adalah mahasiswa Teknik Informatika yang memiliki '
+                'ketertarikan di bidang teknologi dan pengembangan aplikasi. '
+                'Saya senang mempelajari hal-hal baru, khususnya dalam bidang '
+                'pemrograman dan pengembangan web maupun mobile. Saya juga '
+                'terus berusaha meningkatkan kemampuan dan pengalaman agar '
+                'dapat menjadi seorang developer yang kreatif, inovatif, dan '
+                'mampu menghasilkan solusi teknologi yang bermanfaat.',
+                textAlign: TextAlign.justify,
+                style: TextStyle(
+                  fontSize: 14,
+                  height: 1.5,
+                ),
+              ),
+            ),
+          ),
+          SizedBox(height: 12,),
           const Text(
             'Keahlian',
             style: TextStyle(
@@ -106,6 +133,7 @@ class AboutPage extends StatelessWidget {
               ],
             ),
           ),
+         
         ],
       ),
     );
