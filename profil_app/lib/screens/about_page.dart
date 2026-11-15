@@ -79,8 +79,33 @@ class AboutPage extends StatelessWidget {
                 ),
               ],
             ),
-          )
-
+          ),
+          SizedBox(height: 20,),
+          const Text(
+            'Riwayat Pendidikan',
+            style: TextStyle(
+              fontSize: 23,
+              fontWeight: FontWeight.bold
+            ),
+          ),
+          const Card(
+            child: Column(
+              children: [
+                InfoRow(
+                  ikon: Icons.school, 
+                  label: 'Perguruan Tinggi', 
+                  value: 'Instituut Teknologi & Bisnis Bina Sarana Global'
+                ),
+                Divider(height: 1,),
+                InfoRow(
+                  ikon: Icons.menu_book, 
+                  label: 'SMA', 
+                  value: 'SMAN 13 KAB.TANGERANG/MIPA'
+                ),
+                
+              ],
+            ),
+          ),
         ],
       ),
     );
