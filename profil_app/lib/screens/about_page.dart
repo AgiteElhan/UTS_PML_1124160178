@@ -23,11 +23,9 @@ class AboutPage extends StatelessWidget {
               children: [
                 CircleAvatar(
                   radius: 60,
-                  backgroundColor: Colors.blue,
-                  child: Icon(
-                    Icons.person,
-                    size: 65,
-                    color: Colors.white,
+                  backgroundColor: Colors.white,
+                  backgroundImage:  AssetImage(
+                    'assets/images/profil.jpeg'
                   ),
                 ),
                 SizedBox(height: 12,),
