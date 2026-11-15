@@ -102,6 +102,52 @@ class _ProfilePageState extends State<ProfilePage> {
           ],
         ),
       ),
+      body: ListView(
+        children: [
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.all(24),
+            color: Colors.blue,
+            child: Column(
+              children: [
+                CircleAvatar(
+                  radius: 90,
+                  backgroundColor: Colors.white,
+                  backgroundImage: const AssetImage(
+                    'assets/images/profile.jpg'
+                  ),
+                ),
+                SizedBox(height: 16,),
+                Text(
+                  dataMahasiswa.nama,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 24
+                  ),
+                ),
+                SizedBox(height: 5,),
+                Text(
+                  '${dataMahasiswa.prodi} - ${dataMahasiswa.nim}',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16
+                  ),
+                ),
+                SizedBox(height: 12,),
+                Text(
+                  dataMahasiswa.bio,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 14
+                  ),
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
     );
   }
 }
