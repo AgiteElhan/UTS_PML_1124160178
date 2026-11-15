@@ -35,27 +35,27 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // actions: [
-        //   IconButton(
-        //     icon: const Icon(Icons.edit, color: Colors.white),
-        //     onPressed: () async {
-        //       final hasil = await Navigator.push<Profile>(
-        //         context,
-        //         MaterialPageRoute(
-        //           builder: (context) => EditProfilePage(
-        //             profile: dataMahasiswa,
-        //           ),
-        //         ),
-        //       );
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.edit, color: Colors.white),
+            onPressed: () async {
+              final hasil = await Navigator.push<Profile>(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => EditProfilePage(
+                    profile: dataMahasiswa,
+                  ),
+                ),
+              );
 
-        //       if (hasil != null) {
-        //         setState(() {
-        //           dataMahasiswa = hasil;
-        //         });
-        //       }
-        //     },
-        //   ),
-        // ],
+              if (hasil != null) {
+                setState(() {
+                  dataMahasiswa = hasil;
+                });
+              }
+            },
+          ),
+        ],
         centerTitle: true,
         leading: Builder(
           builder: (context) => IconButton(
