@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:profil_app/models/profile.dart';
+import 'package:profil_app/widget/card.dart';
 
 class ProfilePage extends StatefulWidget {
   final Function(bool) changeTheme;
@@ -111,7 +112,7 @@ class _ProfilePageState extends State<ProfilePage> {
             child: Column(
               children: [
                 CircleAvatar(
-                  radius: 90,
+                  radius: 70,
                   backgroundColor: Colors.white,
                   backgroundImage: const AssetImage(
                     'assets/images/profile.jpg'
@@ -143,6 +144,50 @@ class _ProfilePageState extends State<ProfilePage> {
                     fontSize: 14
                   ),
                 ),
+              ],
+            ),
+          ),
+          SizedBox(height: 14,),
+          Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Informasi Kontak',
+                  style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold
+                  ),
+                ),
+                Divider(),
+                Card(
+                  child: Column(
+                    children: [
+                      InfoRow(
+                        ikon: Icons.email, 
+                        label: 'Email', 
+                        value: dataMahasiswa.email
+                      ),                      
+                      InfoRow(
+                        ikon: Icons.phone, 
+                        label: 'Nomor Handphone', 
+                        value: dataMahasiswa.hp
+                      ),
+                      InfoRow(
+                        ikon: Icons.link, 
+                        label: 'GitHub', 
+                        value: dataMahasiswa.github
+                      ),
+                      InfoRow(
+                        ikon: Icons.school, 
+                        label: 'Kelas', 
+                        value: dataMahasiswa.kelas
+                      ),
+
+                    ],
+                  ),
+                )
               ],
             ),
           )
