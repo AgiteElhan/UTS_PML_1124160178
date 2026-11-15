@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:profil_app/models/profile.dart';
 import 'package:profil_app/widget/card.dart';
+import 'package:profil_app/screens/edit_profile_page.dart';
 
 class ProfilePage extends StatefulWidget {
   final Function(bool) changeTheme;
@@ -34,7 +35,37 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        // actions: [
+        //   IconButton(
+        //     icon: const Icon(Icons.edit, color: Colors.white),
+        //     onPressed: () async {
+        //       final hasil = await Navigator.push<Profile>(
+        //         context,
+        //         MaterialPageRoute(
+        //           builder: (context) => EditProfilePage(
+        //             profile: dataMahasiswa,
+        //           ),
+        //         ),
+        //       );
+
+        //       if (hasil != null) {
+        //         setState(() {
+        //           dataMahasiswa = hasil;
+        //         });
+        //       }
+        //     },
+        //   ),
+        // ],
         centerTitle: true,
+        leading: Builder(
+          builder: (context) => IconButton(
+            icon: const Icon(Icons.menu),
+            color: Colors.white,
+            onPressed: () {
+              Scaffold.of(context).openDrawer();
+            },
+          ),
+        ),
         title: const Text(
           'Profile Agit elhan',
           style: TextStyle(
@@ -231,6 +262,22 @@ class _ProfilePageState extends State<ProfilePage> {
           )
         ],
       ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.blue,
+        foregroundColor: Colors.white,
+        onPressed: () {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text(
+                'Terima kasih sudah melihat profil saya!',
+              ),
+              backgroundColor: Colors.blue,
+            ),
+          );
+        },
+        child: const Icon(Icons.info),
+      ),
     );
+    
   }
 }
