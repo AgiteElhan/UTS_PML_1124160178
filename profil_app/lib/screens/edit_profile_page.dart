@@ -44,6 +44,7 @@ class _EditProfilePage extends State<EditProfilePage> {
     hobi1Controller = TextEditingController(text: widget.profile.hobi1);
     hobi2Controller = TextEditingController(text: widget.profile.hobi2);
     hobi3Controller = TextEditingController(text: widget.profile.hobi3);
+  }
 
     Widget buildField(String label, TextEditingController controller) {
       return Padding(
@@ -84,8 +85,35 @@ class _EditProfilePage extends State<EditProfilePage> {
         Navigator.pop(context,dataBaru);
       }
     }
+  @override
+  void dispose(){
+    namaController.dispose();
+    nimController.dispose();
+    prodiController.dispose();
+    kelasController.dispose();
+    bioController.dispose();
+    emailController.dispose();
+    hpController.dispose();
+    githubController.dispose();
+    keahlianController.dispose();
+    hobi1Controller.dispose();
+    hobi2Controller.dispose();
+    hobi3Controller.dispose();
+
+    super.dispose();
   }
+
+
+  @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+       appBar: AppBar(
+        title: const Text('Edit Profile'),
+        backgroundColor: Colors.blue,
+        foregroundColor: Colors.white,
+        centerTitle: true,
+      ),
+
+    );
   }
 }
