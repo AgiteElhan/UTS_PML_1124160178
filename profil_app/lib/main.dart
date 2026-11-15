@@ -64,7 +64,7 @@ class _MyAppState extends State<MyApp> {
         ),
 
 
-        // '/about': (context) => const AboutPage(),
+        '/about': (context) => const AboutPage(),
       },
     );
   }
