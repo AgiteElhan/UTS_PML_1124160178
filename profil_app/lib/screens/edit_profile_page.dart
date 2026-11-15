@@ -113,7 +113,62 @@ class _EditProfilePage extends State<EditProfilePage> {
         foregroundColor: Colors.white,
         centerTitle: true,
       ),
+      body: Form(
+        key: _formKey,
+        child: ListView(
+          padding: const EdgeInsets.all(16),
+          children: [
+            const Text(
+              'Edit Informasi Pribadi',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
 
+            const SizedBox(height: 16),
+
+            buildField('Nama Lengkap', namaController),
+            buildField('NIM', nimController),
+            buildField('Program Studi', prodiController),
+            buildField('Kelas', kelasController),
+            buildField('Bio', bioController),
+            buildField('Email', emailController),
+            buildField('Nomor Handphone', hpController),
+            buildField('GitHub', githubController),
+
+            const Divider(height: 32),
+
+            const Text(
+              'Hobi dan Keahlian',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            const SizedBox(height: 16),
+
+            buildField('Keahlian', keahlianController),
+            buildField('Hobi 1', hobi1Controller),
+            buildField('Hobi 2', hobi2Controller),
+            buildField('Hobi 3', hobi3Controller),
+
+            const SizedBox(height: 16),
+
+            ElevatedButton.icon(
+              onPressed: simpanProfile,
+              icon: const Icon(Icons.save),
+              label: const Text('Simpan Perubahan'),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blue,
+                foregroundColor: Colors.white,
+                padding: const EdgeInsets.all(16),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
