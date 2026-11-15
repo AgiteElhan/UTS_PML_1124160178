@@ -46,23 +46,44 @@ class _EditProfilePage extends State<EditProfilePage> {
     hobi3Controller = TextEditingController(text: widget.profile.hobi3);
 
     Widget buildField(String label, TextEditingController controller) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 16),
-      child: TextFormField(
-        controller: controller,
-        decoration: InputDecoration(
-          labelText: label,
-          border: const OutlineInputBorder(),
+      return Padding(
+        padding: const EdgeInsets.only(bottom: 16),
+        child: TextFormField(
+          controller: controller,
+          decoration: InputDecoration(
+            labelText: label,
+            border: const OutlineInputBorder(),
+          ),
+          validator: (value) {
+            if (value == null || value.trim().isEmpty) {
+              return '$label tidak boleh kosong';
+            }
+            return null;
+          },
         ),
-        validator: (value) {
-          if (value == null || value.trim().isEmpty) {
-            return '$label tidak boleh kosong';
-          }
-          return null;
-        },
-      ),
-    );
-  }
+      );
+    }
+
+    void simpanProfile(){
+      if(_formKey.currentState!.validate()){
+        Profile dataBaru = Profile (
+          nama: namaController.text,
+          nim: nimController.text,
+          hp: hpController.text,
+          email: emailController.text,
+          github: githubController.text,
+          prodi: prodiController.text,
+          kelas: kelasController.text,
+          bio: bioController.text,
+          keahlian: keahlianController.text,
+          hobi1: hobi1Controller.text,
+          hobi2: hobi2Controller.text,
+          hobi3: hobi3Controller.text,
+        );
+
+        Navigator.pop(context,dataBaru);
+      }
+    }
   }
   Widget build(BuildContext context) {
     return const Placeholder();
