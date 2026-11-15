@@ -44,6 +44,25 @@ class _EditProfilePage extends State<EditProfilePage> {
     hobi1Controller = TextEditingController(text: widget.profile.hobi1);
     hobi2Controller = TextEditingController(text: widget.profile.hobi2);
     hobi3Controller = TextEditingController(text: widget.profile.hobi3);
+
+    Widget buildField(String label, TextEditingController controller) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 16),
+      child: TextFormField(
+        controller: controller,
+        decoration: InputDecoration(
+          labelText: label,
+          border: const OutlineInputBorder(),
+        ),
+        validator: (value) {
+          if (value == null || value.trim().isEmpty) {
+            return '$label tidak boleh kosong';
+          }
+          return null;
+        },
+      ),
+    );
+  }
   }
   Widget build(BuildContext context) {
     return const Placeholder();
