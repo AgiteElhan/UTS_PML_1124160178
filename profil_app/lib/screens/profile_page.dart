@@ -22,7 +22,11 @@ class _ProfilePageState extends State<ProfilePage> {
     bio: 'Mahasiswa yang tertarik dengan dunia teknologi',
     email: 'agit@gmail.com', 
     hp: '08152617712', 
-    github: 'AgiteElhan'
+    github: 'AgiteElhan',
+    keahlian: 'Proggramming',
+    hobi1: 'Bermain Game mobile legend',
+    hobi2: 'Berlari pagi',
+    hobi3: 'Bermain PlaySation',
   );
 
   bool isDarkMode = false;
@@ -184,7 +188,41 @@ class _ProfilePageState extends State<ProfilePage> {
                         label: 'Kelas', 
                         value: dataMahasiswa.kelas
                       ),
-
+                    ],
+                  ),
+                ),
+                SizedBox(height: 20,),
+                Text(
+                  'Hobi dan Keahlian',
+                  style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: 14,),
+                Card(
+                  child: Column(
+                    children: [
+                      InfoRow(
+                        ikon: Icons.code, 
+                        label: 'Keahlian', 
+                        value: dataMahasiswa.keahlian
+                      ),
+                      InfoRow(
+                        ikon: Icons.games, 
+                        label: 'Hobi', 
+                        value: dataMahasiswa.hobi1
+                      ),
+                      InfoRow(
+                        ikon: Icons.directions_run, 
+                        label: 'Hobi', 
+                        value: dataMahasiswa.hobi2
+                      ),
+                      InfoRow(
+                        ikon: Icons.gamepad, 
+                        label: 'Hobi', 
+                        value: dataMahasiswa.hobi3
+                      ),
                     ],
                   ),
                 )
