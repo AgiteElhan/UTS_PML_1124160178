@@ -59,9 +59,9 @@ class _MyAppState extends State<MyApp> {
       routes: {
         '/': (context) => const LoginPage(),
 
-        // '/profile' : (context) =>ProfilePage(
-        //   changeTheme:changeTheme
-        // ),
+        '/profile' : (context) =>ProfilePage(
+          changeTheme:changeTheme
+        ),
 
         // '/edit-profile': (context) => const EditProfilePage(),
 
