@@ -136,6 +136,9 @@ class _LoginPageState extends State<LoginPage> {
                 TextFormField(
                   controller: passwordController,
 
+                  obscureText: isPasswordHidden,
+
+
                   decoration: InputDecoration(
                     hintText: '*********',
                     prefixIcon: const Icon(
