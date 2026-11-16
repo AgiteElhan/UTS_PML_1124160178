@@ -103,7 +103,7 @@ class _LoginPageState extends State<LoginPage> {
                   controller: emailController,
 
                   decoration: InputDecoration(
-                    hintText: 'Masukkan Alamat Emaul',
+                    hintText: 'Masukkan Alamat Email',
                     prefixIcon: const Icon(
                       Icons.email,
                       color: Colors.blue,
