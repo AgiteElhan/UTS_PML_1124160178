@@ -12,7 +12,7 @@ Aplikasi Profil Mahasiswa adalah project Ujian Tengah Semester (UTS) mata kuliah
 | Konsentrasi | Software Engineering |
 | Universitas | Institut Teknologi dan Bisnis Bina Sarana Global |
 
-## 🎥 Video Presentasi
+## Video Presentasi
 
 Link YouTube: **[Tonton Video Presentasi](https://youtu.be/OsuyAaG2V1Q?si=eU92C0ZCzGAsNBrr)**
 
@@ -90,11 +90,12 @@ cd UTS_PML_1124160178
 
 Kalau mau, folder ini bisa langsung dibuka di VS Code dengan perintah `code .`
 
-**3. Install Dependencies**
+**3. Bersihkan Cache dan Install Dependencies**
 
-Download semua package yang dibutuhkan project ini:
+Bersihkan dulu sisa build lama supaya tidak ada konflik, lalu download semua package yang dibutuhkan project ini:
 
 ```bash
+flutter clean
 flutter pub get
 ```
 
