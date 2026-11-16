@@ -125,6 +125,26 @@ class _ProfilePageState extends State<ProfilePage> {
                 Navigator.pushNamed(context, '/about');
               },
             ),
+            const Divider(),
+            ListTile(
+              leading: const Icon(
+                Icons.logout,
+                color: Colors.red,
+              ),
+              title: const Text(
+                'Logout',
+                style: TextStyle(
+                  color: Colors.red,
+                ),
+              ),
+              onTap: () {
+                Navigator.pushNamedAndRemoveUntil(
+                  context,
+                  '/',
+                  (route) => false,
+                );
+              },
+            ),
             SwitchListTile(
               secondary: const Icon(Icons.dark_mode),
               title: const Text('Dark Mode'),
