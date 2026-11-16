@@ -120,6 +120,10 @@ class _LoginPageState extends State<LoginPage> {
                     if (!value.contains('@') || !value.contains('.')){
                       return 'Masukkan Email valid!!';
                     }
+
+                    if (value != 'agit@gmail.com') {
+                      return 'Email Tidak Terdaftar!';
+                    }
                     return null;
                   },
                 ),
@@ -169,6 +173,10 @@ class _LoginPageState extends State<LoginPage> {
 
                     if (value.length<5){
                       return 'Password Minimal 6 karakter';
+                    }
+
+                    if (value != '123456') {
+                      return 'Password salah!';
                     }
                     return null;
                   },
