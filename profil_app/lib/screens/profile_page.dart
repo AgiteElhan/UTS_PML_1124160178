@@ -125,6 +125,20 @@ class _ProfilePageState extends State<ProfilePage> {
                 Navigator.pushNamed(context, '/about');
               },
             ),
+            
+            SwitchListTile(
+              secondary: const Icon(Icons.dark_mode),
+              title: const Text('Dark Mode'),
+              value: isDarkMode,
+              onChanged: (value) {
+                setState(() {
+                  isDarkMode = value;
+                });
+
+                widget.changeTheme(value);
+              },
+            ),
+
             const Divider(),
             ListTile(
               leading: const Icon(
@@ -143,18 +157,6 @@ class _ProfilePageState extends State<ProfilePage> {
                   '/',
                   (route) => false,
                 );
-              },
-            ),
-            SwitchListTile(
-              secondary: const Icon(Icons.dark_mode),
-              title: const Text('Dark Mode'),
-              value: isDarkMode,
-              onChanged: (value) {
-                setState(() {
-                  isDarkMode = value;
-                });
-
-                widget.changeTheme(value);
               },
             ),
           ],
